@@ -1,9 +1,6 @@
 
             <%item.categories.forEach(function(category){%>
               <%if(category.name==cate){%>
-                <%console.log(category.name);
-                console.log(cate);%>
-                <%console.log(cate+"congratulation->>>>>>>>>>>>>");%>
                 <li><a href="<%- config.root%><%- item.path%>"><%- item.title%></a></li>
                 <%}%>
             <%});%>

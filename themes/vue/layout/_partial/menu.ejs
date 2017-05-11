@@ -1,0 +1,40 @@
+<div class="bar-left">
+<div class="navbar">
+  <ul class="mobile-main-nav">
+    <%for(var i in theme.menu){%>
+      <li class="mobile-father-li"><a onclick="<%=theme.mbmenu[i].function%>"><%=theme.menu[i].title%></a>
+      <ul class="mobile-son-ul">
+        <%for(var j in theme.mbmenu[i].submenu){%>
+          <li class="mobile-second-menu">
+            <%if(theme.mbmenu[i].submenu[j].havefunction){%>
+              <a class="<%= theme.mbmenu[i].submenu[j].class%>" onclick="<%=theme.mbmenu[i].submenu[j].function%>"><%=theme.mbmenu[i].submenu[j].title%></a>
+            <%}else{%>
+              <%if(theme.mbmenu[i].submenu[j].havemenu){%>
+                <a class="<%= theme.mbmenu[i].submenu[j].class%>" data-background-icon="&#xf104;" onclick="<%=theme.mbmenu[i].submenu[j].function%>"><%=theme.mbmenu[i].submenu[j].title%></a>
+                <%if(theme.mbmenu[i].submenu[j].submenu){%>
+                  <ul class="mobile-last-menu">
+                    <%for(var x in theme.mbmenu[i].submenu[j].submenu){%>
+                      <%if(theme.mbmenu[i].submenu[j].submenu[x].havefunction){%>
+                        <li><a class="end-li" onclick="<%=theme.mbmenu[i].submenu[j].submenu[x].function%>" ><%= theme.mbmenu[i].submenu[j].submenu[x].title%></a>
+                        </li>
+                      <%}else{%>
+                      <li><a class="end-li" href="<%- url_for(theme.mbmenu[i].submenu[j].submenu[x].link)%>"><%= theme.mbmenu[i].submenu[j].submenu[x].title%></a>
+                      </li>
+                      <%}%>
+                      <%}%>
+                  </ul>
+                <%}else{%>
+                  <a class="<%= theme.mbmenu[i].submenu[j].class%>"href="<%- url_for(theme.mbmenu[i].submenu[j].link)%>"><%=theme.mbmenu[i].submenu[j].title%></a>
+                  <%}%>
+              <%}else{%>
+                <a class="<%= theme.mbmenu[i].submenu[j].class%>"href="<%- url_for(theme.mbmenu[i].submenu[j].link)%>"><%=theme.mbmenu[i].submenu[j].title%></a>
+                <%}%>
+            <%}%>
+          </li>
+          <%}%>
+      </ul>
+      </li>
+    <%}%>
+  </ul>
+</div>
+</div>

@@ -10,15 +10,10 @@ var checkname = (name) =>{
     })
     if(check==false){
       category.push(name);
-      console.log("succect");
     }
-    console.log(category);
 }
     site.categories.sort('name').each(function(cate){
-      console.log(cate.name);
       checkname(cate.name);
-      console.log(">>>>>>>>.");
-      console.log(cate.path);
     })
 %>
 <ul>

@@ -15,11 +15,9 @@
             <a href="<%- config.root%><%-item.path%>">
                 <%- item.title||item.link %>
             </a>
-            <%console.log(item.path)%>
-            <%console.log("hello->"+item.categories)%>
+
         </h2>
 
-        <%console.log(item.gallery);%>
         <!-- Content -->
         <%- item.content %>
         <%if(item.gallery){%>

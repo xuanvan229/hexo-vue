@@ -7,8 +7,13 @@
     <%- css('css/syle.css') %>
     <%- js('javascript/vue.js') %>
     <%- js('javascript/yaml.js') %>
+    <%- css('css/font-awesome.min.css')%>
+
   </head>
   <body>
+    <div class="main-page" >
+      <% console.log("+++++++++++++++++++++++++++++++++++++++++"+ theme.mbmenu);%>
+      <%- partial('_partial/menu')%>
     <div class="allbody">
       <div class="main">
       <%- partial('_partial/header')%>
@@ -40,6 +45,7 @@
 
       </div>
     </div>
+  </div>
 
   </body>
   <%- js('javascript/src/loadyml.js') %>

@@ -287,6 +287,7 @@ h2{
   flex-direction: row;
   max-width: 990px;
   width: 100%;
+  padding-top: 10px;
 }
 .post{
   display:flex;
@@ -352,6 +353,12 @@ h2{
   .intension ul li::before{
     content: url(/image/icon_arrow_right_black.png);
     margin-left: 0px;
+  }
+  .sibar_box{
+    margin-top: 30px;
+  }
+  .sibar_box>p{
+    padding: 10px 0;
   }
   .box_header::after{
     content: '';
@@ -509,24 +516,24 @@ h2{
        width:30px;
     height:30px;
     background:#000;
-    border:1px solid #fff; 
+    border:1px solid #fff;
 	 background-image: url(/image/icon_arrow_left_white.png);
     background-repeat: no-repeat;
-    background-position: center center; 
+    background-position: center center;
 
 }
 
   .button_footer button{
-    
+
 }
     .backright{
 	width:30px;
     height:30px;
     background:#000;
-    border:1px solid #fff; 
+    border:1px solid #fff;
 	 background-image: url(/image/icon_arrow_right_white.png);
     background-repeat: no-repeat;
-    background-position: center center; 
+    background-position: center center;
 
 
 }
@@ -552,7 +559,7 @@ height:150px;
 }
 	.contact-line strong{
 	display:inline-block;
-	width:80px;	
+	width:80px;
 	line-height:2em;
 }
 	.contact-line span{
