@@ -1,0 +1,49 @@
+<div id="slidermother" class="slider-mother">
+  <div class="slider-father">
+    <ul id="slider-ul">
+      <li class="myslider"></li>
+      <li class="myslider"></li>
+      <li class="myslider"></li>
+    </ul>
+    <ul class="show-bar">
+      <showbar v-for="i in showbar" :key="i.id" v-bind:item="i"></showbar>
+    </ul>
+      <ul class="control-slider">
+        <li id="slider-bar"></li>
+        <li class="slider-control" onclick="slide(3)"><span class="top-border"></span></li>
+        <li class="slider-control" onclick="slide(1)"><span class="top-border"></span></li>
+        <li class="slider-control" onclick="slide(2)"><span class="top-border"></span></li>
+      </ul>
+      <ul class="center-box">
+        <li  class="box-left box-list">
+          <h2>{{titlecenterbox.title1}}</h2>
+          <div>
+            <p>
+              {{contentcenterbox.content1}}
+            </p>
+            <a href="#" class="read-more">Read more <i class="fa fa-long-arrow-right" style="font-size:12px;"aria-hidden="true"></i>
+          </a>
+          </div>
+        </li>
+        <li class="box-center box-list">
+          <h2>{{titlecenterbox.title2}}</h2>
+          <div >
+            <p>
+              {{contentcenterbox.content2}}
+
+            </p>
+              <a href="#" class="read-more">Read more <i class="fa fa-long-arrow-right" style="font-size:12px;"aria-hidden="true"></i>
+              </a>
+          </div>
+        </li>
+        <li class="box-right box-list">
+          <h2>{{titlecenterbox.title3}}</h2>
+          <div>
+              <ul class="ul-right">
+                <listboxright v-for="i in CommonForms" :key="i.id" v-bind:item="i"></listboxright>          
+              </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>

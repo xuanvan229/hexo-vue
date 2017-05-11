@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <%- css('css/reset.css') %>
+    <%- css('css/syle.css') %>
+    <%- js('javascript/vue.js') %>
+    <%- js('javascript/yaml.js') %>
+  </head>
+  <body>
+    <div class="allbody">
+      <div class="main">
+      <%- partial('_partial/header')%>
+      <%- partial('_partial/slider')%>
+      <div class="body">
+        <%- body %>
+        <div class="catelogry">
+          <%- partial('_partial/categories')%>
+          <div class="sibar_box">
+            <h3 class="box_header">
+              Make An Appointment
+            </h3>
+            <p>Please contact Van Lang IPA using following information:</p>
+            <ul class="contact-data">
+              <li>
+                  <span class="icon-phone"></span>
+                  <p>by phone: <strong>(626) 656-2370 [Main Tel.]</strong></p>
+              </li>
+              <li>
+                  <span class="icon-mail"></span>
+                  <p>by e-mail:&nbsp;<a href="mailto:jeff.ngo@vanlangipa.com">jeff.ngo@vanlangipa.com</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <%- partial('_partial/footer')%>
+
+      </div>
+    </div>
+
+  </body>
+  <%- js('javascript/src/loadyml.js') %>
+  <%- js('javascript/src/component.js') %>
+  <%- js('javascript/src/slider.js') %>
+  <%- js('javascript/src/footer.js') %>
+  <%- js('javascript/myjs.js') %>
+
+
+</html>

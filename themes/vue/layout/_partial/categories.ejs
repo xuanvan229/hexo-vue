@@ -1,0 +1,43 @@
+
+<%
+var category=[];
+var checkname = (name) =>{
+    var check=false;
+    category.map((cate,i)=>{
+      if(cate==name)
+        check=true
+        return
+    })
+    if(check==false){
+      category.push(name);
+      console.log("succect");
+    }
+    console.log(category);
+}
+    site.categories.sort('name').each(function(cate){
+      console.log(cate.name);
+      checkname(cate.name);
+      console.log(">>>>>>>>.");
+      console.log(cate.path);
+    })
+%>
+<ul>
+  <%  category.map((cate,i)=>{%>
+        <%if(cate=="Dota"){
+
+        }else{%>
+          <li class="categories" onclick="click_categories(<%= i%>)">
+              <div class="title-categories simple-icon" data-background-icon="\f067"><%=cate%> </div>
+                  <div class="intension">
+                    <ul>
+                          <% site.posts.each(function(item){ %>
+                              <%- partial('_partial/cate', {item: item,cate:cate}) %>
+                          <% }); %>
+                          </ul>
+                  </div>
+                <%}%>
+          </li>
+
+  <%})%>
+
+</ul>

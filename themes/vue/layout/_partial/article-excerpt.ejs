@@ -1,0 +1,30 @@
+
+<div class="blog-post">
+    <!-- Title --><div class="blog-date">
+    <p> <%= item.date.format(config.date_format) %>
+    </p>
+    <div class="arrow-date"></div>
+</div>
+<div class="asdasdas">
+    <h2 class="blog-post-title">
+        <a href="<%- config.root %><%- item.path %>">
+          <%if(item.image){%>
+            <%- image_tag(item.image) %>
+            <%}%>
+            <%- item.title %>
+            <%console.log(">>>>>>>>>>>"+item.categories);%>
+            <%item.categories.forEach(function(category){%>
+              <%console.log("---------------"+category.name);%>
+                <%- category.name%>
+            <%});%>
+
+        </a>
+    </h2>
+    <p><%- item.titlesub%></p>
+    <!-- Date and Author -->
+
+          <!-- Content -->
+<!-- item.excerpt || item.content -->
+
+</div>
+</div>

@@ -1,0 +1,45 @@
+<div id="footer" class="container-footer">
+  <div class="footer">
+    <ul class="footer_banner_box">
+      <banner v-for="i in banner" :key="i.id" v-bind:item="i"></banner>
+    </ul>
+  </div>
+  <div class="footer_box_container">
+    <div class="footer_box">
+      <h3>{{footerbox.title}}</h3>
+      <p>{{footerbox.content}}
+      </p>
+      <ul class="social_icon">
+        <social v-for="i in socialicon" :key="i.id" v-bind:item="i"></social>
+      </ul>
+    </div>
+    <div class="footer_box">
+      <div class="header_center_footer">
+        <h3>Latest Posts</h3>
+        <div class="button_footer">
+            <button type="button" class="backleft" name="button"onclick="Push_Scroll_To_Bot()"></button>
+            <button type="button" class="backright" name="button" onclick="Push_Scroll_To_Top()"></button>
+        </div>
+      </div>
+      <div class="scroll_list_father">
+          <div class="scroll_list_son">
+            <ul class="ul_right_white">
+            <% site.posts.each(function(item){ %>
+                <%if(item.display){%>
+                <%- partial('_partial/lastnew', {item: item}) %>
+                <%}%>
+            <% }); %>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div class="footer_box">
+ 	    <h3>Contact Information</h3>
+	     <div>
+         <contact v-for="i in contact" :key="i.id" v-bind:item="i"></contact>
+    		
+
+	</div>
+    </div>
+  </div>
+</div>

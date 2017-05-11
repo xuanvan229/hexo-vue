@@ -1,0 +1,20 @@
+<div id="header" class="header">
+  <div class="left-menu">
+    <div class="control-bar" id="control-menu">
+      <i class="fa fa-bars fa-2x" aria-hidden="true" onclick="push()"></i>
+    </div>
+      <a href="/">
+        <%- image_tag("image/logo-sans.png") %>
+      </a>
+      <div class="">
+      </div>
+  </div>
+  <ul class="main-menu">
+    <li class="main-menu-li" v-for="item in menu"><a href="">{{item.title}}</a>
+      <ul>
+      <submenu-ul v-for="i in item.subtitle" :key= "i.id" v-bind:submenu="i"></submenu-ul>
+      </ul>
+    </li>
+  </ul>
+  <%console.log(theme.menu);%>
+</div>

@@ -1,0 +1,7 @@
+<div class="main-post">
+<% site.posts.each(function(item){ %>
+    <%if(item.display){%>
+    <%- partial('_partial/article-excerpt', {item: item}) %>
+    <%}%>
+<% }); %>
+</div>
