@@ -271,6 +271,7 @@ h2{
 }
 .blog-post-title a{
   font-size: 22px;
+  font-weight: normal;
 }
 .blog-post-title a img{
   max-width: 300px;
@@ -389,6 +390,9 @@ h2{
   .contact-data p {
     margin-left: 39px;
   }
+  .contact-data li{
+    padding: 10px 0;
+  }
   .contact-data li:hover span{
     background-position: 0 -29px;
   }
@@ -409,6 +413,7 @@ h2{
     float:left;
     width: 100%;
     position: absolute;
+    padding:20px 0px;
 
   }
   .footer_banner_item h2{
@@ -511,6 +516,11 @@ h2{
   }
   .button_footer{
     float:left;
+    margin-right: 15px;
+  }
+  .right_white h5{
+    color:#D5D5D5;
+    font-weight: normal;
   }
 .backleft{
        width:30px;
@@ -556,6 +566,7 @@ height:150px;
 	.contact-line{
 	display:flex;
 	flex-direction:row;
+  padding:5px 0;
 }
 	.contact-line strong{
 	display:inline-block;
@@ -563,8 +574,11 @@ height:150px;
 	line-height:2em;
 }
 	.contact-line span{
-	line-height:2em;
+	line-height:2.5em;
 	font-size:0.8em;
+}
+.contact-line h4{
+  font-weight: normal;
 }
 	.scroll_list_father{
 	margin-top:16px;
@@ -573,6 +587,17 @@ height:150px;
   .header{
     width:100%;
     max-width: 768px;
+  }
+  .footer_banner_item{
+  margin-left:-999px;
+  }
+  .footer_box_container{
+    flex-direction: column;
+  }
+  .footer_banner_box{
+    height:252px;
+    display: flex;
+    justify-content: center;
   }
   .left-menu{
     width: 100%;
@@ -664,6 +689,9 @@ height:150px;
 }
 .show-bar-list h1{
   color: #fff;
+  font-size: 60px;
+  font-weight: normal;
+  text-shadow: 2px 5px 5px rgba(0,0,0,0.5);
 }
 .show-bar{
   position: absolute;
@@ -733,6 +761,8 @@ height:150px;
 
 .center-box li h2{
   color:#fff;
+  font-weight: normal;
+  padding: 10px 0;
 }
 
 .read-more{
@@ -784,4 +814,15 @@ height:150px;
 .ul-right a{
   text-decoration: none;
   color:#fff;
+}
+.footer_box h3{
+  font-weight: normal;
+  padding:10px 0;
+}
+.footer_box p{
+  padding:10px 0;
+  color: #909090;
+    line-height: 150%;
+    font-size: 13px;
+    font-weight: normal;
 }

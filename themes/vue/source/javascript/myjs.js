@@ -12,8 +12,8 @@ var click_categories=(num)=>{
       intension[i].style.display="none";
       title_categories[i].className="title-categories simple-icon";
     }
-    intension[num-1].style.display="block";
-    title_categories[num-1].className="title-categories active-icon";
+    intension[num].style.display="block";
+    title_categories[num].className="title-categories active-icon";
 }
 
 window.onscroll = doThisStuffOnScroll;
@@ -25,14 +25,19 @@ function doThisStuffOnScroll() {
     var footer_banner_item=document.getElementsByClassName("footer_banner_item");
     var item_center=document.getElementsByClassName("item_center");
     var sliderbutton =()=>{
-	if(document.body.clientWidth<1590){
-      footer_banner_item[1].style.marginLeft=document.body.clientWidth*0.62/3+"px";
-      footer_banner_item[2].style.marginLeft=document.body.clientWidth*0.62*2/3+"px";
-	}
-	else{
-	footer_banner_item[1].style.marginLeft="330px";
-	footer_banner_item[2].style.marginLeft="660px";
-}
+      if(document.body.clientWidth<768){
+        footer_banner_item[0].style.marginLeft="0px";
+        footer_banner_item[1].style.marginLeft="0px";
+        footer_banner_item[2].style.marginLeft="0px";
+      }
+    	if(document.body.clientWidth<1590&&document.body.clientWidth>768){
+          footer_banner_item[1].style.marginLeft=document.body.clientWidth*0.62/3+"px";
+          footer_banner_item[2].style.marginLeft=document.body.clientWidth*0.62*2/3+"px";
+    	}
+    	  if(document.body.clientWidth>1590){
+    	footer_banner_item[1].style.marginLeft="330px";
+    	footer_banner_item[2].style.marginLeft="660px";
+    }
     }
     var heightwindow=window.innerHeight;
     var heightheader=header[0].clientHeight;
@@ -139,6 +144,7 @@ var checkwidth=()=>{
 onlyone();
   //cho hàm chạy liên tục
 setInterval(checkwidth,1);
+setInterval(doThisStuffOnScroll,1);
   // hàm ready để khởi tạo các giá trị cho website
 var ready=()=>{
       var x=document.getElementsByClassName("myslider");
@@ -191,6 +197,9 @@ var ready=()=>{
         for(i=0;i<x.length;i++){
           x[i].style.height=H*670+"px";//set height cho từng slide
         }
+        for(i=0;i<footer_banner_item.length;i++){
+          footer_banner_item[i].style.maxWidth=document.body.clientWidth*0.62+"px";
+        }
         for(i=0;i<slidercontrol.length;i++){
           slidercontrol[i].style.width=document.body.clientWidth*0.62/3+"px";//set width cho từng slider control
           topborder[i].style.width=document.body.clientWidth*0.62/3+"px"//set width cho top-border
@@ -205,11 +214,15 @@ var ready=()=>{
           blog_post[i].style.maxWidth=document.body.clientWidth*0.62+"px";
         }
         for(i=0;i<footer_box.length;i++){
-          footer_box[i].style.maxWidth=document.body.clientWidth*0.62/3+"px";
+          footer_box[i].style.maxWidth=document.body.clientWidth*0.62+"px";
         }
         boxlist[0].style.marginTop="0px";//set margin cho từng phần tử của box list
         boxlist[1].style.marginTop="175px";
         boxlist[2].style.marginTop="350px";
+        footer_banner_item[0].style.marginTop="0px";
+        footer_banner_item[1].style.marginTop="84px";
+        footer_banner_item[2].style.marginTop="168px";
+
         sliderfather[0].style.width=document.body.clientWidth+"px";//set width cho slider-father
         sliderfather[0].style.height=((H*670)+525)+"px";//set height cho slider-father bằng slider + 3 thanh box-center
       }
@@ -260,7 +273,9 @@ var ready=()=>{
             boxlist[0].style.marginTop="0px";//set margin top cho box list
             boxlist[1].style.marginTop="0px";
             boxlist[2].style.marginTop="0px";
-
+            footer_banner_item[0].style.marginTop="0px";
+            footer_banner_item[1].style.marginTop="0px";
+            footer_banner_item[2].style.marginTop="0px";
   }
   else {
             slideul.style.heigt=H*670+"px";
@@ -308,6 +323,9 @@ var ready=()=>{
             boxlist[2].style.marginTop="0px";
             centerbox[0].style.top="475px";
             centerbox[0].style.width="990px";
+            footer_banner_item[0].style.marginTop="0px";
+            footer_banner_item[1].style.marginTop="0px";
+            footer_banner_item[2].style.marginTop="0px";
           }
           var slideul=document.getElementById("slider-ul");
 
