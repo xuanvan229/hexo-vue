@@ -21,10 +21,10 @@ var checkname = (name) =>{
         <%if(cate=="Dota"){
 
         }else{%>
-          <li class="categories" onclick="click_categories(<%= i%>)">
+          <li class="categories" >
               <div class="title-categories simple-icon" data-background-icon="\f067"><%=cate%> </div>
                   <div class="intension">
-                    <ul>
+                    <ul class="title-cate">
                           <% site.posts.each(function(item){ %>
                               <%- partial('_partial/cate', {item: item,cate:cate}) %>
                           <% }); %>

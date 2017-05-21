@@ -6,15 +6,27 @@ var categories = document.getElementsByClassName("categories");
 var title_categories=document.getElementsByClassName("title-categories");
 title_categories[0].className="title-categories active-icon";
 
-var click_categories=(num)=>{
-  var i;
-    for(i=0;i<intension.length;i++){
-      intension[i].style.display="none";
-      title_categories[i].className="title-categories simple-icon";
+
+$(document).ready(function() {
+  $('.intension:first').show(); // trong css cho tất cả ul ẩn, chỉ riêng thằng ul đầu tiên show
+  $('.title-categories').click(function(event) {
+    // $('.title-cate').hide(); // tắt tất cả
+    $('.intension').slideUp();
+    $('.title-categories').removeClass('active-icon');
+    $('.title-categories').addClass('simple-icon');
+    if($(this).hasClass('simple-icon')){
+      $(this).removeClass('simple-icon');
+      $(this).addClass('active-icon');
     }
-    intension[num].style.display="block";
-    title_categories[num].className="title-categories active-icon";
-}
+    if(!$(this).next().is(":visible"))
+		{
+			$(this).next().slideDown();
+		}// hàm next() là chỉ thẻ cùng cấp kế tiếp, và slideDown() là mở cái thằng được click
+  });
+});
+
+
+
 
 window.onscroll = doThisStuffOnScroll;
 
@@ -253,10 +265,10 @@ var ready=()=>{
               slidercontrol[i].style.width=document.body.clientWidth*0.62/3+"px";
               topborder[i].style.width=document.body.clientWidth*0.62/3+"px"
             }
-            for(i=0;i<boxlist.length;i++){//set width cho box list
-              boxlist[i].style.width=document.body.clientWidth*0.62/3+"px";
-              boxlist[i].style.height=H*0.3*670+"px";
-            }
+            // for(i=0;i<boxlist.length;i++){//set width cho box list
+            //   boxlist[i].style.width=document.body.clientWidth*0.62/3+"px";
+            //   boxlist[i].style.height=H*0.3*670+"px";
+            // }
             for(i=0;i<footer_banner_item.length;i++){
               footer_banner_item[i].style.maxWidth=document.body.clientWidth*0.62/3+"px";
             }
@@ -268,8 +280,24 @@ var ready=()=>{
               footer_box[i].style.maxWidth=document.body.clientWidth*0.62/3+"px";
             }
             catelogry[0].style.maxWidth=document.body.clientWidth*0.62/3+"px";
-            sliderfather[0].style.width=document.body.clientWidth+"px";
-            sliderfather[0].style.height=H*670+"px";
+            if(document.body.clientWidth<1290&&document.body.clientWidth>768){
+              sliderfather[0].style.width=document.body.clientWidth+"px";
+              sliderfather[0].style.height=((H*670)+100)+"px";
+
+              for(i=0;i<boxlist.length;i++){//set width cho box list
+                boxlist[i].style.width=document.body.clientWidth*0.62/3+"px";
+                boxlist[i].style.height=((H*0.3*670)+100)+"px";
+              }
+            }
+            if(document.body.clientWidth<1590&&document.body.clientWidth>1290){
+              sliderfather[0].style.width=document.body.clientWidth+"px";
+              sliderfather[0].style.height=H*670+"px";
+              for(i=0;i<boxlist.length;i++){//set width cho box list
+                boxlist[i].style.width=document.body.clientWidth*0.62/3+"px";
+                boxlist[i].style.height=H*0.3*670+"px";
+              }
+            }
+
             boxlist[0].style.marginTop="0px";//set margin top cho box list
             boxlist[1].style.marginTop="0px";
             boxlist[2].style.marginTop="0px";

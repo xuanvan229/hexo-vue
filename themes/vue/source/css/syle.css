@@ -319,6 +319,9 @@ h2{
   .categories>.intension{
     display: none;
   }
+  .intension ul li{
+    margin-left: 5px;
+  }
   .categories:focus>.intension {
     display: block;
   }
@@ -337,6 +340,9 @@ h2{
     background-color: #3156a3;
     color:#fff;
 
+  }
+  .intension{
+    display: none;
   }
   .active-icon::before{
     content:  url('/image/accordion_minus.png');
@@ -522,6 +528,10 @@ h2{
     color:#D5D5D5;
     font-weight: normal;
   }
+  .right_white h5 a{
+    color:#D5D5D5;
+    font-weight: normal;
+  }
 .backleft{
        width:30px;
     height:30px;
@@ -572,6 +582,11 @@ height:150px;
 	display:inline-block;
 	width:80px;
 	line-height:2em;
+  font-size:15px;
+}
+.contact-line a{
+  line-height: 30px;
+  color: #D5D5D5;
 }
 	.contact-line span{
 	line-height:2.5em;
@@ -810,6 +825,7 @@ height:150px;
 }
 .ul-right li{
   list-style: none;
+  padding: 10px 0;
 }
 .ul-right a{
   text-decoration: none;
