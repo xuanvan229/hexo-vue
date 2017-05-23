@@ -12,23 +12,23 @@ var app = new Vue({
     menu: [
       {title: 'ABOUT_US', link: '/',
         subtitle: [
-          {title: 'About Van Lang IPA', link: '/', class: 'no-menu'},
-          {title: 'Our Leadership', link: '/', class: 'no-menu'},
-          {title: 'Our Team', link: '/', class: 'no-menu'}
+          {title: 'About Van Lang IPA', link: '/2015/11/07/about-us', class: 'no-menu'},
+          {title: 'Our Leadership', link: '/2015/11/07/leadership-team/', class: 'no-menu'},
+          {title: 'Our Team', link: '/2015/11/07/leadership-team/', class: 'no-menu'}
         ]},
       {title: 'FOR PROVIDERS', link: '/',
         subtitle: [
           {title: 'Claims', link: '/', class: "submenu", ok: 'ok',
           subtitle: [
-            {title: 'How to create a claim batch in eCW for VLIPA', link:'/'},
-            {title: 'How to setup paper claim in Athena', link: '/'},
-            {title: 'Setup VLIPA as a favourite in Athena', link:'/'},
-            {title: 'How to file claims', link: '/'}
+            {title: 'How to create a claim batch in eCW for VLIPA', link:'/2015/11/07/guide/how-to-create-a-claim-batch-in-ecw-for-vlipa/'},
+            {title: 'How to setup paper claim in Athena', link: '/2015/11/07/guide/how-to-set-up-paper-claims-in-athena/'},
+            {title: 'Setup VLIPA as a favourite in Athena', link:'/2015/11/07/guide/set-up-van-lang-ipa-as-a-favorite-in-athena/'},
+            {title: 'How to file claims', link: '/2015/11/07/guide/tips-on-how-to-file-claims/'}
           ]
         },
           {title: 'Prior Authorization', link: '/', class: "submenu", ok: 'ok',
           subtitle:[
-            {title: 'RioTab Access Introduction', link: '/'},
+            {title: 'RioTab Access Introduction', link: '/2015/11/14/prior-authorization/riotap-intro/'},
             {title: 'Authorization', link: '/2016/05/11/prior-authorization/authorization/'}
           ]
         },
@@ -74,17 +74,17 @@ var app = new Vue({
       },
       {title: 'PAYER BENEFITS', link: '/',
         subtitle: [
-          {title: 'Summary of Benefits for Amerivantage Dual Coordination (HMO SNP)', link: '/'},
-          {title: 'Summary of Benefits for Amerivantage Classic (HMO) and Amerivantage Select (HMO)', link: '/'}
+          {title: 'Summary of Benefits for Amerivantage Dual Coordination (HMO SNP)', link: '/2017/01/05/payer-benefits/2017-benefits-specialty/'},
+          {title: 'Summary of Benefits for Amerivantage Classic (HMO) and Amerivantage Select (HMO)', link: '/2016/01/06/payer-benefits/benefits_classic_and_select_2016/'}
         ]
       },
       {title: 'DRUG FORMULARY', link: '/',
         subtitle: [
-          {title: 'Amerivantage Specialty', link: '/'},
-          {title: 'Amerivantage Select', link: '/'},
-          {title: 'Amerivantage Classic', link: '/'},
-          {title: '2017 Over-the-Counter Health Products Catalog', link: '/'},
-          {title: 'Walmart $4 drug list', link: '/'},
+          {title: 'Amerivantage Specialty', link: '/2017/01/05/drug-formulary/2017-amerivantage-specialty-formulary/'},
+          {title: 'Amerivantage Select', link: '/2017/01/05/drug-formulary/2017-amerivantage-select-formulary/'},
+          {title: 'Amerivantage Classic', link: '/2017/01/05/drug-formulary/2017-amerivantage-classic-formulary/'},
+          {title: '2017 Over-the-Counter Health Products Catalog', link: '/2017/01/05/drug-formulary/Amerigroup_OTC_Catalog_2017/'},
+          {title: 'Walmart $4 drug list', link: '/2017/04/05/drug-formulary/Walmart_usd4_drug_list/'},
           {title: 'Our Team', link: '/', class: 'submenu', ok: 'ok',
           subtitle: [
             {title: 'Medicaid Preferred Drug List 2016',link: '/2017/04/05/medicaid-formulary/medicaid-preferred-drug-list-2016/'}
@@ -94,7 +94,7 @@ var app = new Vue({
       },
       {title: 'CONTACT', link: '/',
         subtitle: [
-          {title: 'Join Van Lang IPA', link: '/'}
+          {title: 'Join Van Lang IPA', link: '/2015/11/07/join-vlipa/'}
         ]
       }
     ]

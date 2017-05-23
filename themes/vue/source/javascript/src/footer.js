@@ -14,9 +14,9 @@ var footer = new Vue({
   el: "#footer",
   data: {
     banner: [
-      {class: 'footer_banner_item item_left', title: 'Collaboration', link: '2015/11/07/about-us/', subtitle: 'Click to know more'},
-      {class: 'footer_banner_item item_center', title: 'Innovation', link: '2015/11/07/about-us/', subtitle: 'Click to know more'},
-      {class: 'footer_banner_item item_right', title: 'Technology', link: '2015/11/07/about-us/', subtitle: 'Click to know more'}
+      {class: 'footer_banner_item item_left', title: 'Collaboration', link: '/2015/11/07/about-us/', subtitle: 'Click to know more'},
+      {class: 'footer_banner_item item_center', title: 'Innovation', link: '/2015/11/07/about-us/', subtitle: 'Click to know more'},
+      {class: 'footer_banner_item item_right', title: 'Technology', link: '/2015/11/07/about-us/', subtitle: 'Click to know more'}
     ],
     footerbox: {
       title: 'Van Lang IPA',

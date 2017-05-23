@@ -8,6 +8,17 @@ title_categories[0].className="title-categories active-icon";
 
 
 $(document).ready(function() {
+  var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+
+    if(is_chrome){
+      $('.allbody').css('justify-content',"center");
+      }
+      var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if(isSafari){
+    $('.allbody').css('justify-content',"space-between");
+    $('.footer_banner_box').css('display','block');
+  }
   $('.intension:first').show(); // trong css cho tất cả ul ẩn, chỉ riêng thằng ul đầu tiên show
   $('.title-categories').click(function(event) {
     // $('.title-cate').hide(); // tắt tất cả
@@ -138,10 +149,10 @@ var onlyone=()=>{
   check=document.body.clientWidth;
   //set margin cho từng slide
   if(document.body.clientWidth<1590){
-      x[0].style.marginLeft=document.body.clientWidth+"px";
+      x[0].style.marginLeft="0px";
   }
   else{
-    x[0].style.marginLeft="1590px";
+    x[0].style.marginLeft="0px";
   }
 }
   // hàm kiểm tra khi thay đổi screen
@@ -209,6 +220,7 @@ var ready=()=>{
         for(i=0;i<x.length;i++){
           x[i].style.height=H*670+"px";//set height cho từng slide
         }
+        footer[0].style.maxWidth=document.body.clientWidth*0.62+"px";
         for(i=0;i<footer_banner_item.length;i++){
           footer_banner_item[i].style.maxWidth=document.body.clientWidth*0.62+"px";
         }
@@ -223,7 +235,7 @@ var ready=()=>{
           boxlist[i].style.left="0px";//set left để chống trôi
         }
         for(i=0;i<blog_post.length;i++){
-          blog_post[i].style.maxWidth=document.body.clientWidth*0.62+"px";
+          blog_post[i].style.maxWidth=document.body.clientWidth+"px";
         }
         for(i=0;i<footer_box.length;i++){
           footer_box[i].style.maxWidth=document.body.clientWidth*0.62+"px";
@@ -377,7 +389,7 @@ var slide=(m)=>{
     if(m==1){//load slider khi nhấn vào control-slider
       console.log("m="+m)
       x[1].style.marginLeft="0px"//load slider 2
-      x[0].style.marginLeft="0px"//ban đầu slide đầu tiên margin bằng  document.body.clientWidth nên kéo về 0
+      x[0].style.marginLeft=-widthscreen+"px"//ban đầu slide đầu tiên margin bằng  document.body.clientWidth nên kéo về 0
       sliderbar.style.marginLeft=document.body.clientWidth*0.62/3+"px";//margin thanh slider-bar
       showbarlist[0].style.display="none";
       showbarlist[1].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -386,7 +398,6 @@ var slide=(m)=>{
     }
     else if (m==2) {
       console.log("m="+m)
-      x[0].style.marginLeft="0px"
       x[1].style.marginLeft=-widthscreen+"px"//load slider 3
       sliderbar.style.marginLeft=document.body.clientWidth*0.62*2/3+"px";
       showbarlist[0].style.display="none";
@@ -397,7 +408,7 @@ var slide=(m)=>{
     }
     else if (m==3) {
       console.log("m="+m)
-      x[0].style.marginLeft=widthscreen+"px";//đưa về ban đầu, load slider 1
+      x[0].style.marginLeft="0px";//đưa về ban đầu, load slider 1
       x[1].style.marginLeft="0";
       sliderbar.style.marginLeft="0px";
       showbarlist[0].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -406,7 +417,8 @@ var slide=(m)=>{
     }
     else{ // slider tự động load khi không bị tác động
     if(index==1){
-      x[0].style.marginLeft="0px"//load slider 2
+      x[0].style.marginLeft=-widthscreen+"px"
+      x[1].style.marginLeft="0px"//load slider 2
       sliderbar.style.marginLeft=document.body.clientWidth*0.62/3+"px";
       showbarlist[0].style.display="none";
       showbarlist[1].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -420,7 +432,7 @@ var slide=(m)=>{
       showbarlist[2].style.display="block";//set ẩn hiện các tiêu đề cho slider
     }
     else if(index==3){
-      x[0].style.marginLeft=widthscreen+"px";//load slider 1
+      x[0].style.marginLeft="0px";//load slider 1
       x[1].style.marginLeft="0";
       sliderbar.style.marginLeft="0px";
       showbarlist[0].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -436,7 +448,7 @@ var slide=(m)=>{
       index=1;
     }
     if(m==1){//load slider khi nhấn vào control-slider
-      x[0].style.marginLeft="0px";//load slider 2
+      x[0].style.marginLeft="-1590px";//load slider 2
       x[1].style.marginLeft="0px"
       sliderbar.style.marginLeft="330px";
       showbarlist[0].style.display="none";
@@ -444,7 +456,6 @@ var slide=(m)=>{
       showbarlist[2].style.display="none";
     }
     else if (m==2) {
-      x[0].style.marginLeft="0px"//load slider 3
       x[1].style.marginLeft="-1590px"
       sliderbar.style.marginLeft="660px";
       showbarlist[0].style.display="none";
@@ -453,7 +464,7 @@ var slide=(m)=>{
 
     }
     else if (m==3) {
-      x[0].style.marginLeft="1590px";//load slider 1
+      x[0].style.marginLeft="0px";//load slider 1
       x[1].style.marginLeft="0";
       sliderbar.style.marginLeft="0px";
       showbarlist[0].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -462,7 +473,9 @@ var slide=(m)=>{
     }
     else {// slider tự động load khi không bị tác động
     if(index==1){
-      x[0].style.marginLeft="0px";//load slider 2
+      console.log(index);
+      x[0].style.marginLeft="-1590px"
+      x[1].style.marginLeft="0px"//load slider 2
       sliderbar.style.marginLeft="330px";
       showbarlist[0].style.display="none";
       showbarlist[1].style.display="block";//set ẩn hiện các tiêu đề cho slider
@@ -470,6 +483,7 @@ var slide=(m)=>{
 
     }
     else if(index==2){
+      console.log(index);
       x[1].style.marginLeft="-1590px"//load slider 3
       sliderbar.style.marginLeft="660px";
       showbarlist[0].style.display="none";
@@ -477,7 +491,8 @@ var slide=(m)=>{
       showbarlist[2].style.display="block";//set ẩn hiện các tiêu đề cho slider
     }
     else if(index==3){
-      x[0].style.marginLeft="1590px";//load slider 1
+      console.log(index);
+      x[0].style.marginLeft="0px";//load slider 1
       x[1].style.marginLeft="0";
       sliderbar.style.marginLeft="0px";
       showbarlist[0].style.display="block";//set ẩn hiện các tiêu đề cho slider
